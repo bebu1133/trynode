@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var dishRouter = express.Router();
-
+var a=1:
 dishRouter.use(bodyParser.json());
 
 dishRouter.route('/')
@@ -13,6 +13,7 @@ dishRouter.route('/')
 
 .get(function(req,res,next){
         res.end('Will send all the dishes to you!');
+        console.log(a);
 })
 
 .post(function(req, res, next){
@@ -44,3 +45,4 @@ dishRouter.route('/:dishId')
 });
 
 module.exports = dishRouter;
+asdas
