@@ -1,6 +1,7 @@
 var express = require('express');
-var morgan = require('morgan');
-var dishes= require('./dishes');
+var morgan  = require('morgan');
+var server  = require('./dishes');
+
 
 var hostname = 'localhost';
 var port = 3000;
@@ -8,7 +9,22 @@ var port = 3000;
 var app = express();
 
 app.use(morgan('dev'));
-app.use('/dishes',dishes);
+
+server('dish',function(err,router){
+  if (err==null){
+    app.use('/dishes',router);
+  }
+});
+server('promotion',function(err,router){
+  if (err==null){
+    app.use('/promotion',router);
+  }
+});
+server('leader',function(err,router){
+  if (err==null){
+    app.use('/leader',router);
+  }
+});
 
 app.all('*',function(req,res){
   res.end('404 page not found!')
