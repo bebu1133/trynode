@@ -2,7 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var dishRouter = express.Router();
-var a=1:
 dishRouter.use(bodyParser.json());
 
 dishRouter.route('/')
@@ -45,4 +44,3 @@ dishRouter.route('/:dishId')
 });
 
 module.exports = dishRouter;
-asdas
